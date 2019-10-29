@@ -1,5 +1,5 @@
 // Your code goes here
-
+// Input into hidden form on selecting register or log in
 const register = document.querySelectorAll('.nav-link')[2];
 
 register.addEventListener('click', event => {
@@ -30,8 +30,7 @@ signIn.addEventListener('click', event => {
     console.log(event);
 
 });
-
-
+// KEYDOWN
 const lastNameInput = document.getElementsByName('lname')[0];
 
 lastNameInput.addEventListener('keydown', (event => {
@@ -42,6 +41,40 @@ const firstNameInput = document.getElementsByName('fname')[0];
 firstNameInput.addEventListener('keydown', (event => {
     console.log(`User last name entered: ${event.key}`);
 }));
+
+// Blur/ focus - if passwords not the same or if email is not valid box goes red
+
+const blur = document.querySelector('input[name="email"]');
+blur.addEventListener('blur', (event) => {
+    if (document.querySelector('#email').value.includes('@')) {
+        document.querySelector('#email').style.backgroundColor = 'green'; 
+           
+//     document.querySelector('input[name="email"]').focus();
+} else {
+    document.querySelector('#email').focus();
+        console.log(`not a valid email`);
+       event.target.style.backgroundColor = 'red'; 
+    
+};
+});
+
+
+
+    // input.onblur = function () {
+    //     if (!this.value.includes('@')) { // not email
+    //         // show the error
+    //         this.input.add("error");
+    //         // ...and put the focus back
+    //         input.focus();
+    //     } else {
+    //         this.input.remove("error");
+    //     }
+    // };
+// var blur = document.querySelector('input[type="text"]');
+// blur.addEventListener('onfocus', runEvent);
+// // blur.addEventListener('blur', runEvent);
+
+// Submit
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function (event) {
@@ -66,28 +99,6 @@ form.addEventListener('submit', function (event) {
 
 });
 
-// const submit = document.querySelector('.form .btn');
-
-// submit.addEventListener('submit', function (event) {
-//   console.log('Form: Detected Submit Event!');
-//   event.preventDefault();
-
-//   console.log('First Name', event.target[0].value);
-//   console.log('Last Name', event.target[1].value);
-// });
-//   const submit = document.querySelector('.btn');
-
-// console.log(submit);
-
-// register.addEventListener('click', event => {
-
-//         document.querySelector('.hidden-form').style.display = 'none';
-
-
-//     console.log('hidden form- display none');
-//     console.log(event);
-
-//   });
 
 
 const hoverIslandPic = document.querySelectorAll('.destination .btn')[2];
@@ -133,3 +144,49 @@ hoverMountainPic.addEventListener('mouseleave', event => {
     event.stopPropagation();
 
 });
+
+// wheel
+
+let sepia = document.querySelector('img');
+document.addEventListener('wheel', function(event){
+  sepia.style.filter = 'sepia(100%)';
+  sepia.style.transition = '1s';
+});
+
+// DOUBLE CLICK
+
+let turnHeaderPink = document.querySelector('.logo-heading');
+document.addEventListener('dblclick', function(event){
+
+    turnHeaderPink.style.color = 'pink'
+ 
+});
+// ONSCROLL
+const scroll = document.querySelector('.container');
+document.addEventListener('scroll', event =>{
+    turnHeaderPink.style.color = 'red'
+});
+
+
+
+
+
+
+
+// Failed attempt to get sound playing on double click
+
+// let waveSound = document.getElementById('waves'); 
+// // console.log(waveSound);
+// // document.addEventListener('click',function(event){
+    
+// //         a.play();
+// //       }
+
+// // } )
+// // buffers automatically when created
+// snd.play();
+// let rotate = document.getElementsById('map');
+// document.addEventListener('click', function(event){
+//   rotate.style.transform = 'rotate(360deg)';
+// //   rotate.style.transition = '3s';
+// });

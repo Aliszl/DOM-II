@@ -217,8 +217,9 @@ img {
 }
 .main-navigation .hidden-form {
   display: none;
-  max-width: 20%;
+  max-width: 175px;
   height: auto;
+  float: right;
 }
 .footer {
   width: 100%;
