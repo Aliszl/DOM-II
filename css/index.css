@@ -215,6 +215,11 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .hidden-form {
+  display: none;
+  max-width: 20%;
+  height: auto;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
